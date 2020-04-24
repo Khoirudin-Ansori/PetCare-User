@@ -26,6 +26,25 @@
         android:gravity="center"
         android:orientation="vertical">
 
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Nama Hewan"-->
+<!--            android:id="@+id/nama_hewan"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Tanggal Penitipan"-->
+<!--            android:id="@+id/tanggal_penitipan"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Tanggal Kembali"-->
+<!--            android:id="@+id/t_kembali"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>-->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerTitipan"
             android:layout_width="match_parent"

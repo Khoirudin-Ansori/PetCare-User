@@ -8,25 +8,56 @@
             android:orientation="vertical"
             android:background="@drawable/titipan"
             android:padding="20dp">
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/namahewan"
-                android:text="Nama Hewan"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <TextView
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Nama Hewan :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Hewan"
+                    android:id="@+id/nama_hewan"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jenis Hewan"
-                android:id="@+id/jenishewan"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-            <TextView
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Tanggal Penitipan :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Penitipan"
+                    android:id="@+id/tanggal_penitipan"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tanggal Penitipan"
-                android:id="@+id/tglpenitipan"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Tanggal Kembali :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Kembali"
+                    android:id="@+id/tanggal_kembali"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+            </RelativeLayout>
         </LinearLayout>
 </LinearLayout>
