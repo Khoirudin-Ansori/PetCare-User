@@ -10,6 +10,7 @@ class AdapterTitipan(val TitipanList:ArrayList<Titipan>): RecyclerView.Adapter<A
     override fun onBindViewHolder(holder: AdapterTitipan.ViewHolder, position: Int) {
 
         val titipan: Titipan=TitipanList[position]
+        holder?.nama_pemilik?.text = titipan.nama_pemilik
         holder?.nama_hewan?.text = titipan.nama_hewan
         holder?.tanggal_penitipan?.text = titipan.tanggal_penitipan
         holder?.tanggal_kembali?.text = titipan.tanggal_kembali
@@ -25,8 +26,10 @@ class AdapterTitipan(val TitipanList:ArrayList<Titipan>): RecyclerView.Adapter<A
         return TitipanList.size
     }
     class  ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val nama_pemilik= itemView.findViewById(R.id.nama_pemilik) as TextView
         val nama_hewan= itemView.findViewById(R.id.nama_hewan) as TextView
         val tanggal_penitipan = itemView.findViewById(R.id.tanggal_penitipan) as TextView
         val tanggal_kembali= itemView.findViewById(R.id.tanggal_kembali) as TextView
+
     }
 }

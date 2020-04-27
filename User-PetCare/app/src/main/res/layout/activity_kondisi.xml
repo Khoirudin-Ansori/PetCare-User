@@ -27,9 +27,9 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerTitipan"
+            android:id="@+id/recyclerKondisi"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="380dp"
             android:layout_margin="20dp"
             android:background="@drawable/border"
             android:padding="10dp"

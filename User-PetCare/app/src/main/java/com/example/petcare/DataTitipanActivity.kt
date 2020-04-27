@@ -27,7 +27,6 @@ class DataTitipanActivity : AppCompatActivity() {
     fun getdatatitipan(){
         val recyclerView = findViewById(R.id.recyclerTitipan) as RecyclerView
         recyclerView.layoutManager= LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-
         val titipan=ArrayList<Titipan>()
         AndroidNetworking.get("http://192.168.1.248/Semester_4/Mobile_Programming_Terapan/UAS/API/pet_care/data_titipan.php")
             .setPriority(Priority.MEDIUM)
@@ -45,10 +44,11 @@ class DataTitipanActivity : AppCompatActivity() {
 //                        t_kembali.setText(jsonObject.optString("tanggal_kembali"))
 
                         // txt1.setText(jsonObject.optString("shubuh"))
+                        var isi0=jsonObject.optString("nama_pemilik").toString()
                         var isi1=jsonObject.optString("nama_hewan").toString()
                         var isi2=jsonObject.optString("tanggal_penitipan").toString()
                         var isi3=jsonObject.optString("tanggal_kembali").toString()
-                        titipan.add(Titipan("$isi1", "$isi2", "$isi3"))
+                        titipan.add(Titipan("$isi0","$isi1", "$isi2", "$isi3"))
                     }
                     val adapter=AdapterTitipan(titipan)
                     recyclerView.adapter=adapter

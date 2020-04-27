@@ -70,7 +70,7 @@ class FormPenitipanActivity : AppCompatActivity() {
     fun postkeserver(data:String, data2:String, data3:String, data4 :String, data5:String, data6:String, data7:String){
         AndroidNetworking.post("http://192.168.1.248/Semester_4/Mobile_Programming_Terapan/UAS/API/pet_care/add_hewan.php")
             .addBodyParameter("nama_pemilik", data)
-            .addBodyParameter("alamat_pamilik", data2)
+            .addBodyParameter("alamat_pemilik", data2)
             .addBodyParameter("no_hp", data3)
             .addBodyParameter("nama_hewan", data4)
             .addBodyParameter("jenis_kelamin", data5)
