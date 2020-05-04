@@ -1,5 +1,6 @@
 package com.example.petcare
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
+import kotlinx.android.synthetic.main.activity_kondisi.*
 import org.json.JSONObject
 
 class KondisiActivity : AppCompatActivity() {
@@ -18,6 +20,13 @@ class KondisiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kondisi)
         getdatakondisi()
+        back()
+    }
+    fun back(){
+        back_f_k.setOnClickListener(){
+            val bck = Intent (this,HomeActivity::class.java)
+            startActivity(bck)
+        }
     }
 
     fun getdatakondisi(){

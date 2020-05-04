@@ -1,5 +1,6 @@
 package com.example.petcare
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,13 @@ class DataTitipanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_titipan)
         getdatatitipan()
+        back()
+    }
+    fun back(){
+        back_f_t.setOnClickListener(){
+            val bck = Intent (this,HomeActivity::class.java)
+            startActivity(bck)
+        }
     }
     fun getdatatitipan(){
         val recyclerView = findViewById(R.id.recyclerTitipan) as RecyclerView
