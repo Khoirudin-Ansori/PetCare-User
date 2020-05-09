@@ -26,8 +26,10 @@ class KondisiActivity : AppCompatActivity() {
         back_f_k.setOnClickListener(){
             val bck = Intent (this,HomeActivity::class.java)
             startActivity(bck)
+            finish()
         }
     }
+
 
     fun getdatakondisi(){
         val recyclerView = findViewById(R.id.recyclerKondisi) as RecyclerView

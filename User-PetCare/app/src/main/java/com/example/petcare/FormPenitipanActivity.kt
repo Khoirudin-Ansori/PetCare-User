@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -21,6 +22,14 @@ class FormPenitipanActivity : AppCompatActivity() {
         pilihtanggaltitipan()
         pilihtanggalkembali()
         tambahdatatitipan()
+        back()
+    }
+    fun back(){
+        backtohome.setOnClickListener(){
+            val bck = Intent (this,HomeActivity::class.java)
+            startActivity(bck)
+            finish()
+        }
     }
     fun pilihtanggaltitipan(){
         val c_titipan = Calendar.getInstance()
@@ -28,7 +37,7 @@ class FormPenitipanActivity : AppCompatActivity() {
         val month_titipan = c_titipan.get(Calendar.MONTH)
         val day_titipan = c_titipan.get(Calendar.DAY_OF_MONTH)
 
-        datepicktitipan.setOnClickListener(){
+        tanggal_penitipan.setOnClickListener(){
             val dpd_titipan = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 // Display Selected date in TextView
                 tanggal_penitipan.setText("" + mYear + "-" + mMonth+ "-" + mDay)
@@ -42,7 +51,7 @@ class FormPenitipanActivity : AppCompatActivity() {
         val month_kembali = c_kembali.get(Calendar.MONTH)
         val day_kembali = c_kembali.get(Calendar.DAY_OF_MONTH)
 
-        datepickkembali.setOnClickListener(){
+        tanggal_kembali.setOnClickListener(){
             val dpd_kembali = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 // Display Selected date in TextView
                 tanggal_kembali.setText("" + mYear+ "-" + mMonth+ "-" + mDay)
@@ -65,6 +74,8 @@ class FormPenitipanActivity : AppCompatActivity() {
 
             val tologin = Intent(this, HomeActivity::class.java)
             startActivity(tologin)
+            Toast.makeText(applicationContext, "Data Berhasil Di Masukkan", Toast.LENGTH_SHORT).show()
+
         }
     }
     fun postkeserver(data:String, data2:String, data3:String, data4 :String, data5:String, data6:String, data7:String){

@@ -30,6 +30,7 @@ class DataTitipanActivity : AppCompatActivity() {
         back_f_t.setOnClickListener(){
             val bck = Intent (this,HomeActivity::class.java)
             startActivity(bck)
+            finish()
         }
     }
     fun getdatatitipan(){

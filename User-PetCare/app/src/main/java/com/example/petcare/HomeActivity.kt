@@ -30,18 +30,21 @@ class HomeActivity : AppCompatActivity() {
         to_frm_titipan.setOnClickListener(){
             val frm = Intent (this,FormPenitipanActivity::class.java)
             startActivity(frm)
+            finish()
         }
     }
     fun titipan(){
         to_dttitipan.setOnClickListener(){
             val dttitipan = Intent(this,DataTitipanActivity::class.java)
             startActivity(dttitipan)
+            finish()
         }
     }
     fun kondisi(){
         to_kndisi.setOnClickListener(){
             val kndisi = Intent(this,KondisiActivity::class.java)
             startActivity(kndisi)
+            finish()
         }
     }
 }

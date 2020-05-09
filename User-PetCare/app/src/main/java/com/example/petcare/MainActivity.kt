@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 postkerserver(username,password)
+
 
             }
         }
@@ -77,6 +79,11 @@ class MainActivity : AppCompatActivity() {
 
                             startActivity(Intent(this@MainActivity,HomeActivity::class.java))
                             finish()
+                            Toast.makeText(applicationContext, "Login berhasil", Toast.LENGTH_SHORT).show()
+
+                        }else{
+                            Toast.makeText(applicationContext, "Username atau Password Salah ", Toast.LENGTH_SHORT).show()
+
                         }
                     }
 

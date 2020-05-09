@@ -89,47 +89,28 @@
             android:textSize="14dp"
             android:paddingLeft="5dp"
             android:background="@drawable/input"/>
-        <RelativeLayout
+        <TextView
+            android:layout_alignParentLeft="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_alignParentLeft="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tanggal Penitipan"/>
-            <ImageButton
-                android:id="@+id/datepicktitipan"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#4c8f91"
-                android:src="@drawable/ic_date_range_black_24dp" />
-        </RelativeLayout>
-        <EditText
+            android:text="Tanggal Penitipan"/>
+        <TextView
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:paddingRight="5dp"
             android:id="@+id/tanggal_penitipan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input"
             android:paddingLeft="5dp"
             android:textSize="14dp" />
-        <RelativeLayout
+        <TextView
+            android:layout_alignParentLeft="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_alignParentLeft="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tanggal Pengambilan"/>
-            <ImageButton
-                android:id="@+id/datepickkembali"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#4c8f91"
-                android:src="@drawable/ic_date_range_black_24dp" />
-        </RelativeLayout>
-        <EditText
+            android:layout_height="wrap_content"
+            android:text="Tanggal Pengambilan"/>
+        <TextView
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:paddingRight="5dp"
             android:id="@+id/tanggal_kembali"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -140,13 +121,15 @@
             android:drawableLeft="@drawable/ic_info_outline_black_24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Data yang Anda Masukkan Tidak Boleh Kosong Tidak Dapat Di Rubah"/>
+            android:text="Data yang Anda Masukkan Tidak Boleh Kosong, dan Tidak Dapat Di Rubah"/>
 
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
         <Button
             android:id="@+id/addtitipan"
             android:layout_alignParentRight="true"
@@ -154,6 +137,14 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button"
             android:text="Submit"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/backtohome"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="Back"
             android:textAllCaps="false"/>
     </RelativeLayout>
 
