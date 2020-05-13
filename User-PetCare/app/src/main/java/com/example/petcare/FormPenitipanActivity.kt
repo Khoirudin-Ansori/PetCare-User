@@ -1,10 +1,12 @@
 package com.example.petcare
 
 import android.app.DatePickerDialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -70,11 +72,45 @@ class FormPenitipanActivity : AppCompatActivity() {
             var v_tanggal_penitipan= tanggal_penitipan.text.toString()
             var v_tanggal_kembali = tanggal_kembali.text.toString()
 
-            postkeserver(v_nama_pemilik, v_alamat_pemilik, v_no_hp, v_nama_hewan,v_jenis_kelamin, v_tanggal_penitipan,v_tanggal_kembali )
+            if (v_nama_pemilik == "" || v_alamat_pemilik == "" || v_no_hp == "" || v_nama_hewan == "" || v_jenis_kelamin == "" || v_tanggal_penitipan == "" || v_tanggal_kembali == ""
+            ) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Alert")
+                builder.setMessage("Data Tidak Boleh Kosong")
+                builder.setPositiveButton("OK",
+                    DialogInterface.OnClickListener { dialogInterface, i -> dialogInterface.dismiss()
+//                        postkeserver(v_nama_pemilik, v_alamat_pemilik, v_no_hp, v_nama_hewan,v_jenis_kelamin, v_tanggal_penitipan,v_tanggal_kembali )
+//
+//                        val tologin = Intent(this, HomeActivity::class.java)
+//                        startActivity(tologin)
+//                        Toast.makeText(applicationContext, "Data Berhasil Di Masukkan", Toast.LENGTH_SHORT).show()
+                    })
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.show()
+            } else{
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Alert")
+                builder.setMessage("Apakah Anda Yakin Data Yang Anda Isi Sudah Benar?")
+                builder.setPositiveButton("OK",
+                    DialogInterface.OnClickListener { dialogInterface, i ->
+                        postkeserver(v_nama_pemilik, v_alamat_pemilik, v_no_hp, v_nama_hewan,v_jenis_kelamin, v_tanggal_penitipan,v_tanggal_kembali )
 
-            val tologin = Intent(this, HomeActivity::class.java)
-            startActivity(tologin)
-            Toast.makeText(applicationContext, "Data Berhasil Di Masukkan", Toast.LENGTH_SHORT).show()
+                        val tologin = Intent(this, HomeActivity::class.java)
+                        startActivity(tologin)
+                        Toast.makeText(applicationContext, "Data Berhasil Di Masukkan", Toast.LENGTH_SHORT).show()
+                    })
+                builder.setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener{dialogInterface, i -> dialogInterface.dismiss()  }
+                )
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.show()
+            }
+
+//            postkeserver(v_nama_pemilik, v_alamat_pemilik, v_no_hp, v_nama_hewan,v_jenis_kelamin, v_tanggal_penitipan,v_tanggal_kembali )
+//
+//            val tologin = Intent(this, HomeActivity::class.java)
+//            startActivity(tologin)
+//            Toast.makeText(applicationContext, "Data Berhasil Di Masukkan", Toast.LENGTH_SHORT).show()
 
         }
     }

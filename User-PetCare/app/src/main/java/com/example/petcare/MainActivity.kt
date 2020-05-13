@@ -1,11 +1,13 @@
 package com.example.petcare
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -35,9 +37,18 @@ class MainActivity : AppCompatActivity() {
                 var username=username.text.toString()
                 var password=password.text.toString()
 
-
-                postkerserver(username,password)
-
+                if (username == "" || password == ""
+                ) {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Alert")
+                    builder.setMessage("Username dan Password Tidak Boleh Kosong")
+                    builder.setPositiveButton("OK",
+                        DialogInterface.OnClickListener { dialogInterface, i -> dialogInterface.dismiss() })
+                    val alertDialog: AlertDialog = builder.create()
+                    alertDialog.show()
+                } else {
+                    postkerserver(username, password)
+                }
 
             }
         }
